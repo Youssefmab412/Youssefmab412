@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio to Text Translator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Audio to Text Translator</h1>
+            <p class="subtitle">Convert your audio files to text with ease</p>
+        </header>
+
+        <main>
+            <div class="upload-container">
+                <div class="upload-card">
+                    <div class="card-header">
+                        <i class="fas fa-file-audio"></i>
+                        <h2>Upload Audio</h2>
+                    </div>
+                    <div class="card-content">
+                        <input type="file" id="audio-upload" accept=".mp3,.wav" class="hidden">
+                        <label for="audio-upload" class="upload-btn"><i class="fas fa-upload"></i> Choose File</label>
+                        <p class="file-info">No file selected</p>
+                        <button id="transcribe-btn" class="transcribe-btn" disabled><i class="fas fa-language"></i> Transcribe Audio</button>
+                        <p class="error-message hidden">Please select an audio file first</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-container">
+                <div class="transcription-wrapper">
+                    <div class="loading hidden">
+                        <div class="spinner"></div>
+                        <p>Processing audio...</p>
+                    </div>
+                    <div class="transcription-container">
+                        <div class="textarea-header">
+                            <h3><i class="fas fa-align-left"></i> Transcription Result</h3>
+                        </div>
+                        <textarea id="transcription" readonly placeholder="Transcribed text will appear here..."></textarea>
+                        <button id="copy-btn" class="copy-btn"><i class="fas fa-copy"></i> Copy Text</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by AssemblyAI | &copy; 2023</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
